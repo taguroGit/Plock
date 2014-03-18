@@ -40,8 +40,7 @@ namespace Plock
 
            
             gameForm.game=gameController.run(textBox1.Text);
-            gameForm.refreshTextBox1();
-            gameForm.Refresh();
+            gameForm.refreshWindow();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

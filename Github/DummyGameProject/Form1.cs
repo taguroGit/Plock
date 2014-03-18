@@ -52,6 +52,7 @@ namespace DummyGameProject
         public void refreshWindow()
         {
             refreshTextBox1();
+            Refresh();
         }
     }
 }
