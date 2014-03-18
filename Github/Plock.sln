@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plock", "Plock\Plock.csproj", "{65A6BF2E-571E-4BE1-BABC-514B2F492093}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1C835A05-85F5-4732-B410-4907993CB337} = {1C835A05-85F5-4732-B410-4907993CB337}
+		{6920E8AA-CA10-415A-AF8F-943A4B39E446} = {6920E8AA-CA10-415A-AF8F-943A4B39E446}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MethodsAlgorism", "testStateAlgorism\MethodsAlgorism.csproj", "{6920E8AA-CA10-415A-AF8F-943A4B39E446}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyGameProject", "DummyGameProject\DummyGameProject.csproj", "{1C835A05-85F5-4732-B410-4907993CB337}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65A6BF2E-571E-4BE1-BABC-514B2F492093}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{65A6BF2E-571E-4BE1-BABC-514B2F492093}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{65A6BF2E-571E-4BE1-BABC-514B2F492093}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{65A6BF2E-571E-4BE1-BABC-514B2F492093}.Debug|x86.ActiveCfg = Debug|x86
+		{65A6BF2E-571E-4BE1-BABC-514B2F492093}.Debug|x86.Build.0 = Debug|x86
+		{65A6BF2E-571E-4BE1-BABC-514B2F492093}.Release|Any CPU.ActiveCfg = Release|x86
+		{65A6BF2E-571E-4BE1-BABC-514B2F492093}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{65A6BF2E-571E-4BE1-BABC-514B2F492093}.Release|Mixed Platforms.Build.0 = Release|x86
+		{65A6BF2E-571E-4BE1-BABC-514B2F492093}.Release|x86.ActiveCfg = Release|x86
+		{65A6BF2E-571E-4BE1-BABC-514B2F492093}.Release|x86.Build.0 = Release|x86
+		{6920E8AA-CA10-415A-AF8F-943A4B39E446}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{6920E8AA-CA10-415A-AF8F-943A4B39E446}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{6920E8AA-CA10-415A-AF8F-943A4B39E446}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{6920E8AA-CA10-415A-AF8F-943A4B39E446}.Debug|x86.ActiveCfg = Debug|x86
+		{6920E8AA-CA10-415A-AF8F-943A4B39E446}.Debug|x86.Build.0 = Debug|x86
+		{6920E8AA-CA10-415A-AF8F-943A4B39E446}.Release|Any CPU.ActiveCfg = Release|x86
+		{6920E8AA-CA10-415A-AF8F-943A4B39E446}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{6920E8AA-CA10-415A-AF8F-943A4B39E446}.Release|Mixed Platforms.Build.0 = Release|x86
+		{6920E8AA-CA10-415A-AF8F-943A4B39E446}.Release|x86.ActiveCfg = Release|x86
+		{6920E8AA-CA10-415A-AF8F-943A4B39E446}.Release|x86.Build.0 = Release|x86
+		{1C835A05-85F5-4732-B410-4907993CB337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C835A05-85F5-4732-B410-4907993CB337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C835A05-85F5-4732-B410-4907993CB337}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1C835A05-85F5-4732-B410-4907993CB337}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1C835A05-85F5-4732-B410-4907993CB337}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1C835A05-85F5-4732-B410-4907993CB337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C835A05-85F5-4732-B410-4907993CB337}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C835A05-85F5-4732-B410-4907993CB337}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1C835A05-85F5-4732-B410-4907993CB337}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1C835A05-85F5-4732-B410-4907993CB337}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
