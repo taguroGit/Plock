@@ -26,7 +26,7 @@ namespace Plock
             gameForm.Show();
 
             //インタプリタの実体を生成
-            gameController = new MethodsAlgorism.MethodsAlgorism(gameForm);
+            gameController = new MethodsAlgorism.MethodsAlgorism();
         }
 
         private void label1_Click(object sender, EventArgs e)

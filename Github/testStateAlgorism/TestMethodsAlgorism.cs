@@ -12,7 +12,7 @@ namespace MethodsAlgorism
     public class MethodsAlgorism
     {
 
-        public MethodsAlgorism(DummyGameProject.Form1 gameForm)
+        public MethodsAlgorism()
         {
         }
 
