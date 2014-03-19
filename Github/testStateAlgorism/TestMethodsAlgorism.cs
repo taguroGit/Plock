@@ -7,20 +7,19 @@ using DummyGameProject;
 
 namespace MethodsAlgorism
 {
+    using GameData = DummyGameProject.GameData;//TODO:利用したいゲームのデータクラスを登録
+
     public class MethodsAlgorism
     {
-        private DummyGameProject.Form1 gameForm;
 
-        public MethodsAlgorism(DummyGameProject.Form1 gameForm)
+        public MethodsAlgorism()
         {
-
-            this.gameForm = gameForm;
         }
 
         public static void Main(string[] args)
         {
             //////////////////ゲームの初期設定///////////////////////////////////////////
-            DummyGame game = new GameMethodProperty.Constructor().execute();
+            GameData game = new GameMethodProperty.Constructor().execute();
 
             //////////////////GUIによるプログラムの入力///////////////////////////////////////////
             List<string> dummy =new List<string>();
@@ -60,9 +59,8 @@ namespace MethodsAlgorism
             game=statements.mainMethod.execute(game);//メソッドのリストを実行する
         }
 
-        public DummyGame run(String code)
+        public GameData run(String code,GameData game)
         {
-            DummyGame game = new GameMethodProperty.Constructor().execute();
             MakeMethods statements = new MakeMethods();
             statements.makeMethods(code);          //実行用のメソッドのリストを作る
             game = statements.mainMethod.execute(game);//メソッドのリストを実行する

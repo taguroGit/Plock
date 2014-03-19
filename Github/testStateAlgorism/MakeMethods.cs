@@ -11,7 +11,6 @@ namespace MethodsAlgorism
 
         internal void makeMethods(List<string> stringList)
         {
-            //（構文の制約を減らすためには、文字列を整形する処理を追加する必要があるので、あとで前処理を追加する必要がある）
             //前処理
             TextList sortedText = TextList.sortText(stringList);//ただの文字列のリストを、構文規則にのっとって並び替える
 
@@ -20,7 +19,7 @@ namespace MethodsAlgorism
         }
 
         /// <summary>
-        /// 文字列を渡した場合には、List<string>に切り分けてから委譲する
+        /// 文字列を渡した場合には、/r/nごとにList<string>に切り分けてから委譲する
         /// </summary>
         /// <param name="str"></param>
         internal void makeMethods(string str)
@@ -172,8 +171,8 @@ namespace MethodsAlgorism
             }
 
             /// <summary>
-            /// StringをList<String>に変換する前処理
-            /// </summary>
+            /// Stringを/r/nごとに区切ってList<String>に格納して返す
+            /// /// </summary>
             /// <param name="str"></param>
             /// <returns></returns>
             public static List<string> splitToList(String str){
@@ -187,14 +186,5 @@ namespace MethodsAlgorism
                 return stringList;
             }
         }
-        ///// <summary>
-        ///// データを操作する文
-        ///// </summary>
-        ///// <param name="_stringList"></param>
-        //private void doMethod(string _stringList)
-        //{
-        //    if (_stringList == "xを1増やす") gameData.addX();
-        //    else if (_stringList == "xを1減らす") gameData.minusX();
-        //}
     }
 }

@@ -7,6 +7,7 @@ using DummyGameProject;
 //このファイルにはメソッドの登録以外のことは書かない
 namespace MethodsAlgorism
 {
+    using GameData = DummyGameProject.GameData;//TODO:利用したいゲームのデータクラスを登録
 
     class GameMethodProperty : BaseGameMethodProperty
     {
@@ -34,7 +35,7 @@ namespace MethodsAlgorism
         //(持っているリストとかの値がいろいろあるからメソッドをDeligateにはできない)
         public class AddX : DoMethod    //ダミーのゲームのメソッド
         {
-            public override DummyGame execute(DummyGame game)
+            public override GameData execute(GameData game)
             {
                 game.addX();
                 return game;
@@ -42,7 +43,7 @@ namespace MethodsAlgorism
         }
         public class MinusX : DoMethod    //ダミーのゲームのメソッド
         {
-            public override DummyGame execute(DummyGame game)
+            public override GameData execute(GameData game)
             {
                 game.minusX();
                 return game;
@@ -51,14 +52,14 @@ namespace MethodsAlgorism
 
         public class Constructor : DoMethod    //ダミーのゲームのメソッド
         {
-            public override DummyGame execute(DummyGame game)//GUIのプログラムから呼ぶ場合
+            public override GameData execute(GameData game)//GUIのプログラムから呼ぶ場合
             {
-                return new DummyGame(3, 3);
+                return new GameData(3, 3);
             }
 
-            public DummyGame execute()//最初の初期化
+            public GameData execute()//最初の初期化
             {
-                return new DummyGame(3, 3);
+                return new GameData(3, 3);
             }
         }
 
@@ -75,7 +76,7 @@ namespace MethodsAlgorism
 
         public class IsX2 : IsMethod
         {
-            public override bool execute(DummyGame game)
+            public override bool execute(GameData game)
             {
                 return game.isX2();
             }

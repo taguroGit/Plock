@@ -28,7 +28,7 @@ namespace MethodsAlgorism
         ////////////////////制御文のクラスを書く/////////////////////////
         public class MainMethod : DoMethod//一番多機能なメソッドを指定しないと、登録が上手くいかない（親クラスから子クラスのメソッドを呼び出せないので）Whileとか実装の際には、登録用のMethodを新たに作る必要がある
         {
-            public override DummyGame execute(DummyGame game)
+            public override GameData execute(GameData game)
             {
                 foreach (var _doMethod in methodList)
                 {
@@ -40,7 +40,7 @@ namespace MethodsAlgorism
 
         public class IfMethod : DoMethod
         {
-            public override DummyGame execute(DummyGame game)
+            public override GameData execute(GameData game)
             {
                 if (isMethod.execute(game))
                 {
@@ -56,7 +56,7 @@ namespace MethodsAlgorism
         //何もしないメソッド。　例えば、中かっこの終わり｝とか。表示上は残しておいた方が見やすいが、何もしない行用。
         public class EmptyMethod : DoMethod
         {
-            public override DummyGame execute(DummyGame game)
+            public override GameData execute(GameData game)
             {
                 return game;
             }
@@ -66,7 +66,7 @@ namespace MethodsAlgorism
         {
             public List<DoMethod> methodList;//中かっこの中で実行するメソッドのリストがあれば格納する
             public IsMethod isMethod;//addMethodListによるメソッドの登録の際に、こっちで宣言しておく必要がある。
-            public virtual DummyGame execute(DummyGame game)//受け取ったゲームのデータを更新して返すメソッドを実装する必要がある
+            public virtual GameData execute(GameData game)//受け取ったゲームのデータを更新して返すメソッドを実装する必要がある
             {
                 return game;
             }
@@ -100,7 +100,7 @@ namespace MethodsAlgorism
 
         abstract internal class IsMethod
         {
-            public virtual bool execute(DummyGame game)//ゲームのデータを受け取ってbool値を返すメソッドを実装する必要がある
+            public virtual bool execute(GameData game)//ゲームのデータを受け取ってbool値を返すメソッドを実装する必要がある
             {
                 return false;
             }
