@@ -15,7 +15,8 @@ namespace Plock
     {
         GameForm gameForm;
 
-        MethodsAlgorism.MethodsAlgorism gameController;
+        //MethodsAlgorism.MethodsAlgorism gameController;
+        GameInterpriter gameInterpriter;
 
         public Form1()
         {
@@ -26,7 +27,8 @@ namespace Plock
             gameForm.Show();
 
             //インタプリタの実体を生成
-            gameController = new MethodsAlgorism.MethodsAlgorism();
+            //gameController = new MethodsAlgorism.MethodsAlgorism();
+            gameInterpriter = new GameInterpriter();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -37,7 +39,9 @@ namespace Plock
         private void button1_Click(object sender, EventArgs e)
         {
             //ゲームのデータクラスの更新
-            gameForm.game = gameController.run(textBox1.Text, gameForm.game);
+            //gameForm.game = gameController.run(textBox1.Text, gameForm.game);
+            gameInterpriter.run(textBox1.Text, gameForm.game);
+
             //ゲームの表示の更新
             gameForm.refreshWindow();
         }

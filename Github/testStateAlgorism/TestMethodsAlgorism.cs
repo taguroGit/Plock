@@ -12,9 +12,6 @@ namespace MethodsAlgorism
     public class MethodsAlgorism
     {
 
-        public MethodsAlgorism()
-        {
-        }
 
         public static void Main(string[] args)
         {
