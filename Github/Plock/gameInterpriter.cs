@@ -13,11 +13,30 @@ namespace Plock
 
         public GameData run(String code, GameData game)
         {
-            currentCode = new CodeList();
-            //statements.makeMethods(code);          //実行用のメソッドのリストを作る
-            //game = statements.mainMethod.execute(game);//メソッドのリストを実行する
-            currentCode.setValue(code);
+            build(code);
+
+            while (true)
+            {
+                game = currentCode.execute(game);
+                currentCode = currentCode.getMoveTo(game);
+                if (currentCode.isEnd()) break;
+            }
             return game;
+        }
+
+        internal GameData runOneLine(string code, GameData game)
+        {
+            if (currentCode.isEnd()) return game;
+
+            game = currentCode.execute(game);
+            currentCode = currentCode.getMoveTo(game);
+            return game;
+        }
+
+        internal void build(string code)
+        {
+            currentCode = new CodeList();
+            currentCode.setValue(code);
         }
     }
 
@@ -26,8 +45,8 @@ namespace Plock
     /// </summary>
     class CodeList
     {
-        String value;
-        DoMethod method;
+        String _value;
+        MethodWrapper value;
         CodeList nextCode;//後に実行されるコード
         CodeList previousCode;//前に実行されたコード
         CodeList collerCode;//このコードの呼び出し元
@@ -35,19 +54,25 @@ namespace Plock
 
         public CodeList()
         {
+            value = new MethodWrapper();
             nextCode = null;
             previousCode = null;
             collerCode = null;
             colleeCode = null;
+        }
+        public bool isEnd()
+        {
+            return _value == null;
         }
 
         void setValue(Queue<String> codeQueue){
             
             if (codeQueue.Count == 0) return;
             
-            value = codeQueue.Dequeue();
+            _value = codeQueue.Dequeue();
+            value.set(_value);
 
-            if (value.Contains("{"))
+            if (_value.Contains("{"))
             {
                 //次は、呼び出し先に値をセットする
                 colleeCode = new CodeList();
@@ -55,7 +80,7 @@ namespace Plock
 
                 colleeCode.setValue(codeQueue);
             }
-            else if (value.Contains("}"))
+            else if (_value.Contains("}"))
             {
                 //次は、呼び出し元の後のコードに値をセットする
                 collerCode.nextCode = new CodeList();
@@ -96,6 +121,32 @@ namespace Plock
                 codeQueue.Enqueue(text);
             }
             return codeQueue;
+        }
+
+        internal GameData execute(GameData game)
+        {
+            return value.execute(game);
+        }
+
+        internal CodeList getMoveTo(GameData game)
+        {
+            if (value.isControlMethod()) return getCodeList(value.getMoveTo(game));//制御文の時は要検討（制御文による）
+            if(nextCode!=null)return nextCode;//次のコードがあるときは次のコード
+            return collerCode.nextCode;//次のコードがない時は要検討（コードによる）
+        }
+
+        internal CodeList getCodeList(MoveTo moveTo)
+        {
+            switch (moveTo)
+            {
+                case MoveTo.NEXT:
+                    return nextCode;
+                case MoveTo.COLLERNEXT:
+                    return collerCode;
+                case MoveTo.COLLEE:
+                    return colleeCode;
+            }
+            return null;
         }
     }
 

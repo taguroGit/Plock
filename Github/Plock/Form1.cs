@@ -40,7 +40,7 @@ namespace Plock
         {
             //ゲームのデータクラスの更新
             //gameForm.game = gameController.run(textBox1.Text, gameForm.game);
-            gameInterpriter.run(textBox1.Text, gameForm.game);
+            gameForm.game=gameInterpriter.run(textBox1.Text, gameForm.game);
 
             //ゲームの表示の更新
             gameForm.refreshWindow();
@@ -49,6 +49,21 @@ namespace Plock
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //ゲームのデータクラスの更新
+            //gameForm.game = gameController.run(textBox1.Text, gameForm.game);
+            gameForm.game = gameInterpriter.runOneLine(textBox1.Text, gameForm.game);
+
+            //ゲームの表示の更新
+            gameForm.refreshWindow();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            gameInterpriter.build(textBox1.Text);
         }
     }
 }
