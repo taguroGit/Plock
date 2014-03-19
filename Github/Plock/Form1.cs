@@ -23,7 +23,6 @@ namespace Plock
             
             //ゲームのFormのインスタンスを生成
             gameForm = new GameForm();
-            var gameData = gameForm.game;//TODO:利用したいゲームのデータクラスを登録
             gameForm.Show();
 
             //インタプリタの実体を生成
@@ -36,8 +35,10 @@ namespace Plock
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {  
-            gameForm.game=gameController.run(textBox1.Text);
+        {
+            //ゲームのデータクラスの更新
+            gameForm.game = gameController.run(textBox1.Text, gameForm.game);
+            //ゲームの表示の更新
             gameForm.refreshWindow();
         }
 

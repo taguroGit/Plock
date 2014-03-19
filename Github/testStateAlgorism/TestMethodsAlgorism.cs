@@ -59,9 +59,8 @@ namespace MethodsAlgorism
             game=statements.mainMethod.execute(game);//メソッドのリストを実行する
         }
 
-        public GameData run(String code)
+        public GameData run(String code,GameData game)
         {
-            GameData game = new GameMethodProperty.Constructor().execute();
             MakeMethods statements = new MakeMethods();
             statements.makeMethods(code);          //実行用のメソッドのリストを作る
             game = statements.mainMethod.execute(game);//メソッドのリストを実行する
