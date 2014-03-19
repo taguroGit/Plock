@@ -96,10 +96,6 @@
       <Project>{1c835a05-85f5-4732-b410-4907993cb337}</Project>
       <Name>DummyGameProject</Name>
     </ProjectReference>
-    <ProjectReference Include="..\testStateAlgorism\MethodsAlgorism.csproj">
-      <Project>{6920e8aa-ca10-415a-af8f-943a4b39e446}</Project>
-      <Name>MethodsAlgorism</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

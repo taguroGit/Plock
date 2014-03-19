@@ -54,7 +54,6 @@ namespace Plock
         private void button2_Click(object sender, EventArgs e)
         {
             //ゲームのデータクラスの更新
-            //gameForm.game = gameController.run(textBox1.Text, gameForm.game);
             gameForm.game = gameInterpriter.runOneLine(textBox1.Text, gameForm.game);
 
             //ゲームの表示の更新
