@@ -13,12 +13,12 @@ namespace DummyGameProject
 {
     public partial class Form1 : Form
     {
-        public DummyGameProject.DummyGame game;
+        public DummyGameProject.GameData game;
 
         public Form1()
         {
             InitializeComponent();
-            game= new DummyGameProject.DummyGame(3,3);
+            game= new DummyGameProject.GameData(3,3);
 
             textBox1.Text = game.x.ToString();
         }
@@ -39,7 +39,7 @@ namespace DummyGameProject
 
         private void button3_Click(object sender, EventArgs e)
         {
-            game = new DummyGameProject.DummyGame(3, 3);
+            game = new DummyGameProject.GameData(3, 3);
 
             textBox1.Text = game.x.ToString();
         }
